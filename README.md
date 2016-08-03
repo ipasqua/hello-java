@@ -30,6 +30,6 @@ to create a Spring or Grails application, you would see that it detects both the
 
 The result when visiting the 'Application Deployed URL' should look something like this:
 
-	Hello from 172.30.49.150:20488
+	Hello Cloud Foundry Developer from 172.30.49.150:20488
 
 That's all. Have fun!
