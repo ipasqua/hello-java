@@ -2,6 +2,7 @@ Hello Java Sample
 =================
 
 This sample (originally based on the [SpringSource sample](https://github.com/SpringSource/cloudfoundry-samples/tree/master/hello-java)) aims to demonstrate the simplest possible Servlet-based Java webapp. Here we walk through the entire content of the application.
+This branch is a HCF specific version that uses the [Cloud Foundry environment-variables](https://docs.cloudfoundry.org/devguide/deploy-apps/environment-variable.html environment-variable).
 
 
 Building the Application
@@ -21,7 +22,7 @@ To run the application, make sure you have the HPE Helion Stackato client instal
 
 Then execute:
 
-	stackato push -n 
+	cf push 
 
 Notice that it detected the app type as "Java Web Application". In this case, it's only recognizing a runtime (Java)
 but not a framework (e.g. Spring or Grails), since this really is just a barebones Java web application. If you were
