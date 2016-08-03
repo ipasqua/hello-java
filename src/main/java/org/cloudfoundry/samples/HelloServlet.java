@@ -16,10 +16,10 @@ public class HelloServlet extends HttpServlet {
 		response.setContentType("text/plain");
 		response.setStatus(200);
 		PrintWriter writer = response.getWriter();
-		
 
                 // This is only needed because we want to print the IP
 		String ssh_client_info = System.getenv("SSH_CONNECTION");
+		String i_number = System.getenv("CF_INSTANCE_INDEX");
 		String ip_addr = System.getenv("CF_INSTANCE_IP");
 		String ip_port = System.getenv("CF_INSTANCE_PORT");
 		if (ssh_client_info != null && ip_addr.equals("0.0.0.0")) {
@@ -29,7 +29,8 @@ public class HelloServlet extends HttpServlet {
 			ip_addr = ssh_client_info.substring(portEnd + 1, dockerIPAddressEnd);
 		}
 
-		writer.println("Hello Cloud Foundry Developer from " + ip_addr + ":" + ip_port);
+		writer.println("Hello Cloud Foundry Developer from Instance #" + i_number + " " + ip_addr + ":" + ip_port);
+		System.out.println("Touched. I'm instance #" + i_number);
 		writer.close();
 	}
 }
